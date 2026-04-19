@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda de Eventos Inteligente</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="main-wrapper">
+        <section class="form-section">
+            <h2 id="form-title">Nuevo Evento</h2>
+            <form id="form-evento">
+                <input type="hidden" id="event-id">
+                <div class="control">
+                    <label>Título:</label>
+                    <input type="text" id="titulo" required>
+                </div>
+                <div class="control">
+                    <label>Fecha:</label>
+                    <input type="date" id="fecha" required>
+                </div>
+                <div class="control">
+                    <label>Descripción:</label>
+                    <textarea id="descripcion" rows="3" required></textarea>
+                </div>
+                <button type="submit" id="btn-guardar">Guardar Evento</button>
+                <button type="button" id="btn-cancelar" class="hidden" onclick="resetearFormulario()">Cancelar Edición</button>
+            </form>
+        </section>
+
+        <section class="filter-section">
+            <h3>Filtrar Agenda</h3>
+            <div class="filtros">
+                <input type="date" id="filter-desde">
+                <span>hasta</span>
+                <input type="date" id="filter-hasta">
+                <button onclick="filtrarEventos()">Filtrar</button>
+                <button onclick="limpiarFiltros()">Limpiar</button>
+            </div>
+            <button class="btn-pdf" onclick="exportarPDF()">Exportar Agenda a PDF</button>
+        </section>
+
+        <section id="agenda-pdf" class="agenda-section">
+            <h2>Mis Eventos</h2>
+            <div id="contenedor-eventos" class="event-list">
+                </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

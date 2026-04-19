@@ -1,0 +1,62 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+.main-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+section {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.control { margin-bottom: 15px; }
+label { display: block; font-weight: bold; margin-bottom: 5px; }
+input, textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; }
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#btn-guardar { background: #007bff; color: white; }
+.btn-pdf { background: #28a745; color: white; width: 100%; margin-top: 10px; }
+.hidden { display: none; }
+
+/* Estilo de Tarjetas de Evento */
+.event-card {
+    border-left: 5px solid #007bff;
+    background: #f1f3f5;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 0 8px 8px 0;
+    position: relative;
+}
+
+.event-card h4 { margin: 0 0 5px 0; color: #2c3e50; }
+.event-card small { color: #666; font-weight: bold; }
+.event-card p { margin: 10px 0; font-size: 14px; }
+
+.actions { display: flex; gap: 10px; }
+.btn-edit { background: #ffc107; color: #000; }
+.btn-delete { background: #dc3545; color: white; }
+
+/* 5. Estilos para PDF */
+@media print {
+    .form-section, .filter-section, .actions, #btn-cancelar {
+        display: none !important;
+    }
+    body { background: white; }
+    .agenda-section { box-shadow: none; width: 100%; }
+    .event-card { border: 1px solid #ddd; border-left: 5px solid #000; page-break-inside: avoid; }
+}
